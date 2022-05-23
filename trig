@@ -1,0 +1,7 @@
+CREATE TRIGGER trig1 
+AFTER INSERT 
+ON t1
+FOR EACH ROW 
+BEGIN
+INSERT INTO t2 SET id = NEW.id,name = NEW.name, salary = NEW.salary;
+END//
